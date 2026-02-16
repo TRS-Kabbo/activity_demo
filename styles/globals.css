@@ -12,34 +12,40 @@
   --foreground: 248 250 252;
 }
 
-@layer base {
-  * {
-    @apply border-slate-200 dark:border-slate-800;
-  }
-  body {
-    @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50;
-  }
+body {
+  background-color: white;
+  color: rgb(15 23 42);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.dark body {
+  background-color: rgb(15 23 42);
+  color: rgb(248 250 252);
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+  }
+  
+  .dark .glass {
+    background-color: rgba(15, 23, 42, 0.7);
+    border-color: rgba(30, 41, 59, 0.5);
   }
   
   .glass-card {
-    @apply glass rounded-2xl shadow-xl;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
   
-  .gradient-border {
-    @apply relative overflow-hidden;
-  }
-  
-  .gradient-border::before {
-    content: "";
-    @apply absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-indigo-500 to-purple-500;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+  .dark .glass-card {
+    background-color: rgba(15, 23, 42, 0.7);
+    border-color: rgba(30, 41, 59, 0.5);
   }
 }
 
@@ -53,3 +59,4 @@
     transform: translateY(0);
   }
 }
+
