@@ -92,12 +92,13 @@ export default function AdminLoginPage() {
                   Remember me
                 </span>
               </label>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={() => {}}
                 className="text-indigo-500 hover:text-indigo-600 font-medium"
               >
                 Forgot password?
-              </a>
+              </button>
             </div>
 
             <button
