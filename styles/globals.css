@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+}
+
+.dark {
+  --background: 15 23 42;
+  --foreground: 248 250 252;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+  body {
+    @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl shadow-xl;
+  }
+  
+  .gradient-border {
+    @apply relative overflow-hidden;
+  }
+  
+  .gradient-border::before {
+    content: "";
+    @apply absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-indigo-500 to-purple-500;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
