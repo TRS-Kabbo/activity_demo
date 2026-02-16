@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-background: rgb(255 255 255);
-  --color-foreground: rgb(15 23 42);
-  --backdrop-blur-xs: 2px;
-}
-
-@variant dark (&:where(.dark, .dark *));
-
 :root {
   --background: 255 255 255;
   --foreground: 15 23 42;
